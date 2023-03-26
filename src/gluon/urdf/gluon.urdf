@@ -7,57 +7,6 @@
   <link
     name="dummy">
   </link>
-  <joint
-    name="dummy_center_joint"
-    type="fixed">
-    <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-    <parent
-        link="dummy" />
-    <child
-        link="center_link" />
-  </joint>
-  <link
-    name="center_link">
-        <inertial>
-      <origin
-        xyz="4.33680868994202E-18 -6.00214600243731E-11 0.0271404483614374"
-        rpy="0 0 0" />
-      <mass
-        value="0.524001417146026" />
-      <inertia
-        ixx="0.000535467082580035"
-        ixy="-5.8056109802237E-10"
-        ixz="3.22416889484249E-20"
-        iyy="0.000535467122847014"
-        iyz="-1.91837356854663E-11"
-        izz="0.000799852045598815" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://gluon/meshes/center_link.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="1 1 1 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://gluon/meshes/center_link.STL" />
-      </geometry>
-    </collision>
-  </link>
   <link
     name="base_link">
     <inertial>
@@ -99,13 +48,13 @@
     </collision>
   </link>
   <joint
-    name="left_base_joint"
+    name="dummy_joint"
     type="fixed">
     <origin
         xyz="0 0 0"
         rpy="0 0 0" />
     <parent
-        link="center_link" />
+        link="dummy" />
     <child
         link="base_link" />
   </joint>
