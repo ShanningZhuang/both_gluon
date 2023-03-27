@@ -1,4 +1,5 @@
 <launch>
+  <!--<param name="robot_description" command="$(find xacro)/xacro $(find chasis_urdf)/urdf/chasis_urdf.xacro" /-->
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" >
     <arg name="world_name" value="$(find chasis_urdf)/urdf/field_coke.sdf"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
@@ -17,7 +18,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find chasis_urdf)/urdf/chasis_urdf.urdf -urdf -model chasis_urdf"
+    args="-file $(find chasis_urdf)/urdf/chasis_urdf.xacro -urdf -model chasis_urdf"
     output="screen" />
   <node
     name="fake_joint_calibration"
