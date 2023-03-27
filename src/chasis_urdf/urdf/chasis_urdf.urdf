@@ -44,6 +44,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="base_link">
+        <material>Gazebo/Gold</material>
+    </gazebo>
   <link
     name="front_left">
     <inertial>
@@ -84,6 +87,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="front_left">
+        <material>Gazebo/Black</material>
+    </gazebo>
   <joint
     name="front_left"
     type="continuous">
@@ -137,6 +143,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="front_right">
+        <material>Gazebo/Black</material>
+    </gazebo>
   <joint
     name="front_right"
     type="continuous">
@@ -190,6 +199,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="back_left">
+        <material>Gazebo/Black</material>
+    </gazebo>
   <joint
     name="back_left"
     type="continuous">
@@ -243,6 +255,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="back_right">
+        <material>Gazebo/Black</material>
+    </gazebo>
   <joint
     name="back_right"
     type="continuous">
