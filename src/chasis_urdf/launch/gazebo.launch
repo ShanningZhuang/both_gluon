@@ -1,5 +1,12 @@
 <launch>
-  <!--<param name="robot_description" command="$(find xacro)/xacro $(find chasis_urdf)/urdf/chasis_urdf.xacro" /-->
+
+  <!-- setting param-->
+  <arg name="paused" default="false" />
+  <arg name="use_sim_time" default="true" />
+  <arg name="gui" default="true" />
+  <arg name="headless" default="false" />
+  <arg name="debug" default="false" />
+  <!-- setting including-->
   <include
     file="$(find gazebo_ros)/launch/empty_world.launch" >
     <arg name="world_name" value="$(find chasis_urdf)/urdf/field_coke.sdf"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
@@ -9,6 +16,8 @@
     <arg name="recording" value="false"/>
     <arg name="debug" value="false"/>
   </include>
+  <arg name="model" default="$(find xacro)/xacro --inorder '$(find chasis_urdf)/urdf/chasis_urdf.xacro'"/>
+  <param name="robot_description" command="$(arg model)" />
   <node
     name="tf_footprint_base"
     pkg="tf"
